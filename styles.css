@@ -1,9 +1,9 @@
-/* ==========================================================================
-   SUPREME MENU - ESTILOS PRINCIPALES (DISEÑO PREMIUM DYNAMIC-FLAT)
+﻿/* ==========================================================================
+   SUPREME MENU - ESTILOS PRINCIPALES (DISEÃ‘O PREMIUM DYNAMIC-FLAT)
    Optimizado para alto contraste y elementos tipo Photoshop (capas, sesgados, marcas de agua)
    ========================================================================== */
 
-/* VARIABLES DE DISEÑO */
+/* VARIABLES DE DISEÃ‘O */
 :root {
     /* Paleta de Colores (Premium App Menu Redesign) */
     --bg-color: #0F0F10;          /* Primary Background */
@@ -17,11 +17,11 @@
     --border-color: #2C2C2C;      /* Dark Gray Border */
     --border-width: 1px;          /* Modern clean 1px borders */
     
-    /* Tipografías */
+    /* TipografÃ­as */
     --font-title: 'Bebas Neue', sans-serif;
     --font-body: 'Montserrat', sans-serif;
     
-    /* Configuración de transiciones */
+    /* ConfiguraciÃ³n de transiciones */
     --transition-fast: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -34,7 +34,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 170px; /* Ajuste para el header sticky más alto en móviles */
+    scroll-padding-top: 170px; /* Ajuste para el header sticky mÃ¡s alto en mÃ³viles */
     background-color: var(--bg-color);
     /* Matte dark charcoal background with a soft diagonal lighting gradient mimicking the reference split */
     background: linear-gradient(135deg, rgba(26, 26, 29, 0.95) 0%, rgba(15, 15, 16, 0.98) 60%, var(--bg-color) 100%);
@@ -130,7 +130,7 @@ body::after {
     100% { transform: translate3d(-30px, 20px, 0) scale(1.1) rotate(-5deg); }
 }
 
-/* IMÁGENES RESPONSIVAS */
+/* IMÃGENES RESPONSIVAS */
 img {
     max-width: 100%;
     display: block;
@@ -170,9 +170,9 @@ img {
     text-align: center;
     position: relative;
     z-index: 5;
-    max-height: 120px; /* Alto límite para colapsar suavemente */
-    max-width: 100%;    /* Límite de ancho para móviles */
-    width: 100%;        /* Ocupa el ancho completo en móvil */
+    max-height: 120px; /* Alto lÃ­mite para colapsar suavemente */
+    max-width: 100%;    /* LÃ­mite de ancho para mÃ³viles */
+    width: 100%;        /* Ocupa el ancho completo en mÃ³vil */
     opacity: 1;
     overflow: hidden;
     margin-bottom: 0.5rem;
@@ -197,12 +197,12 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Reducido para móviles para evitar wrapping */
+    gap: 8px; /* Reducido para mÃ³viles para evitar wrapping */
     width: 100%;
 }
 
 .brand-logo {
-    height: 28px; /* Altura optimizada sin badge en móvil */
+    height: 28px; /* Altura optimizada sin badge en mÃ³vil */
     width: auto;
     object-fit: contain;
     filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.5));
@@ -210,13 +210,13 @@ img {
 
 .logo {
     font-family: var(--font-title);
-    font-size: 1.35rem; /* Ajustado para móviles pequeños para que quepa en una sola línea */
+    font-size: 1.35rem; /* Ajustado para mÃ³viles pequeÃ±os para que quepa en una sola lÃ­nea */
     letter-spacing: 1px;
     font-weight: 900;
     line-height: 1;
     font-style: italic;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
-    white-space: nowrap; /* Evita que el título se rompa a dos líneas */
+    white-space: nowrap; /* Evita que el tÃ­tulo se rompa a dos lÃ­neas */
 }
 
 .logo-accent {
@@ -226,23 +226,23 @@ img {
 
 .logo-subtitle {
     font-family: var(--font-body);
-    font-size: 0.5rem; /* Ajustado muy compacto para móviles */
+    font-size: 0.5rem; /* Ajustado muy compacto para mÃ³viles */
     font-weight: 700;
     letter-spacing: 1.5px; /* Reducido para evitar desbordes en celulares */
     color: var(--text-muted);
     text-transform: uppercase;
     margin-top: 0.3rem;
-    white-space: nowrap; /* Fuerza a que quepa en una sola línea */
+    white-space: nowrap; /* Fuerza a que quepa en una sola lÃ­nea */
 }
 
-/* SELLO ROTATIVO DE MARCA (DISEÑO VECTORIAL TIPO PHOTOSHOP) */
+/* SELLO ROTATIVO DE MARCA (DISEÃ‘O VECTORIAL TIPO PHOTOSHOP) */
 .stamp-container {
     position: absolute;
     top: 0.8rem;
     right: 1rem;
     width: 75px;
     height: 75px;
-    display: none; /* Se activa en pantallas medianas/grandes para evitar colisiones en móvil */
+    display: none; /* Se activa en pantallas medianas/grandes para evitar colisiones en mÃ³vil */
     justify-content: center;
     align-items: center;
     pointer-events: none;
@@ -283,17 +283,17 @@ img {
     to { transform: rotate(360deg); }
 }
 
-/* NAVEGACIÓN DE CATEGORÍAS */
+/* NAVEGACIÃ“N DE CATEGORÃAS */
 .nav-categories {
     display: flex;
-    flex-wrap: nowrap; /* Fuerza una sola línea horizontal */
+    flex-wrap: nowrap; /* Fuerza una sola lÃ­nea horizontal */
     gap: 0.8rem;
     width: 100%;
-    justify-content: flex-start; /* Alinea al inicio para evitar recortes en móviles */
+    justify-content: flex-start; /* Alinea al inicio para evitar recortes en mÃ³viles */
     overflow-x: auto;
     scrollbar-width: none;
     padding: 0.4rem 0px; /* Elimina relleno adicional para que inicie alineado con el header (16px del borde de pantalla) */
-    -webkit-overflow-scrolling: touch; /* Desplazamiento táctil fluido inercial en iOS */
+    -webkit-overflow-scrolling: touch; /* Desplazamiento tÃ¡ctil fluido inercial en iOS */
 }
 
 .nav-categories::-webkit-scrollbar {
@@ -312,7 +312,7 @@ img {
     text-transform: uppercase;
     font-style: italic;
     flex-shrink: 0; /* Evita que los botones se encojan */
-    white-space: nowrap; /* Evita saltos de línea en el texto */
+    white-space: nowrap; /* Evita saltos de lÃ­nea en el texto */
 }
 
 .nav-link:hover {
@@ -338,7 +338,7 @@ img {
     gap: 5rem;
 }
 
-/* SECCIONES DEL MENÚ */
+/* SECCIONES DEL MENÃš */
 .menu-section {
     position: relative;
     display: flex;
@@ -368,7 +368,7 @@ img {
     font-style: italic;
 }
 
-/* TÍTULO DE SECCIÓN CON LÍNEA DINÁMICA */
+/* TÃTULO DE SECCIÃ“N CON LÃNEA DINÃMICA */
 .section-title-wrapper {
     display: flex;
     align-items: center;
@@ -416,7 +416,7 @@ img {
     z-index: 2;
 }
 
-/* TARJETA DE PRODUCTO DINÁMICA */
+/* TARJETA DE PRODUCTO DINÃMICA */
 .product-card {
     background-color: var(--card-bg);
     border: var(--border-width) solid var(--border-color);
@@ -433,7 +433,7 @@ img {
         0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* NUMERACIÓN SERIAL GOURMET */
+/* NUMERACIÃ“N SERIAL GOURMET */
 .card-number {
     position: absolute;
     top: 0.8rem;
@@ -492,7 +492,7 @@ img {
     filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
 }
 
-/* Línea de acento oblicua debajo del corte diagonal (solo visible al hover) */
+/* LÃ­nea de acento oblicua debajo del corte diagonal (solo visible al hover) */
 .product-card::before {
     content: '';
     position: absolute;
@@ -553,7 +553,7 @@ img {
     text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
 }
 
-/* EFECTOS HOVER COMPLEJOS Y ACTIVE (DISEÑO PREMIUM MODERNO) */
+/* EFECTOS HOVER COMPLEJOS Y ACTIVE (DISEÃ‘O PREMIUM MODERNO) */
 .product-card:hover,
 .product-card.active-mobile {
     transform: translateY(-5px); /* Smooth floating translation */
@@ -650,7 +650,7 @@ img {
     }
 
     .section-title {
-        font-size: 2.2rem; /* Tamaño de título balanceado */
+        font-size: 2.2rem; /* TamaÃ±o de tÃ­tulo balanceado */
     }
 
     .section-title-wrapper {
@@ -659,8 +659,8 @@ img {
 
     /* 2. Tarjetas y Contenido */
     .product-card {
-        border-width: 2px; /* Bordes ligeramente más finos para tarjetas chicas */
-        min-height: 290px; /* Hace que las tarjetas se vean un poco más largas y uniformes */
+        border-width: 2px; /* Bordes ligeramente mÃ¡s finos para tarjetas chicas */
+        min-height: 290px; /* Hace que las tarjetas se vean un poco mÃ¡s largas y uniformes */
         border-radius: 12px;
         box-shadow: 
             inset 0 0 0 1px rgba(255, 255, 255, 0.05),
@@ -686,23 +686,23 @@ img {
         transform: skewY(-3.5deg);
     }
     
-    /* 4. Textos y Títulos Escilados */
+    /* 4. Textos y TÃ­tulos Escilados */
     .product-title {
         font-size: 1.1rem;
         line-height: 1.1;
         margin-bottom: 0.3rem;
         display: -webkit-box;
-        -webkit-line-clamp: 2; /* Permite hasta 2 líneas de título */
+        -webkit-line-clamp: 2; /* Permite hasta 2 lÃ­neas de tÃ­tulo */
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
     .product-description {
-        font-size: 0.72rem; /* Descripción compacta */
+        font-size: 0.72rem; /* DescripciÃ³n compacta */
         line-height: 1.35;
         margin-bottom: 0.8rem;
-        /* Muestra el texto completo sin truncar para que quepa toda la descripción */
+        /* Muestra el texto completo sin truncar para que quepa toda la descripciÃ³n */
         display: block;
         overflow: visible;
         text-overflow: clip;
@@ -713,7 +713,7 @@ img {
     }
 
     .card-number {
-        font-size: 2rem; /* Número serial más sutil */
+        font-size: 2rem; /* NÃºmero serial mÃ¡s sutil */
         top: 0.3rem;
         left: 0.3rem;
     }
@@ -730,7 +730,7 @@ img {
         line-height: 1.1;
     }
 
-    /* 6. Efectos Hover para móvil (sombra menos exagerada para no encimarse) */
+    /* 6. Efectos Hover para mÃ³vil (sombra menos exagerada para no encimarse) */
     .product-card:hover,
     .product-card.active-mobile {
         transform: translateY(-4px);
@@ -746,7 +746,7 @@ img {
         border-color: var(--accent-highlight);
     }
 
-    /* Ajustes para la tarjeta destacada en móvil */
+    /* Ajustes para la tarjeta destacada en mÃ³vil */
     .product-card-featured .product-image-container {
         height: 165px; /* Taller image on mobile (default is 125px) */
         clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
@@ -767,7 +767,7 @@ img {
             0 0 12px rgba(255, 193, 7, 0.08);
     }
 
-    /* 7. Desactivar animaciones de humo en móvil para optimizar batería y rendimiento */
+    /* 7. Desactivar animaciones de humo en mÃ³vil para optimizar baterÃ­a y rendimiento */
     .smoke-overlay,
     .smoke-overlay-secondary {
         animation: none !important;
@@ -825,8 +825,8 @@ img {
     
     .logo-wrapper {
         text-align: left;
-        width: auto;      /* Desactiva el 100% de móvil */
-        max-width: 500px; /* Ancho máximo para transiciones suaves horizontales */
+        width: auto;      /* Desactiva el 100% de mÃ³vil */
+        max-width: 500px; /* Ancho mÃ¡ximo para transiciones suaves horizontales */
         margin-right: 2rem;
     }
 
@@ -836,11 +836,11 @@ img {
     }
 
     .brand-logo {
-        height: 48px; /* Altura más grande sin badge en escritorio */
+        height: 48px; /* Altura mÃ¡s grande sin badge en escritorio */
     }
 
     .logo {
-        font-size: 2.4rem; /* Recupera tamaño grande en escritorio */
+        font-size: 2.4rem; /* Recupera tamaÃ±o grande en escritorio */
     }
 
     .logo-subtitle {
@@ -863,10 +863,10 @@ img {
 }
 
 /* ==========================================================================
-   SISTEMA DE IMPRESIÓN HÍBRIDO (CSS @media print)
+   SISTEMA DE IMPRESIÃ“N HÃBRIDO (CSS @media print)
    ========================================================================== */
 @media print {
-    /* 1. RESET Y CONFIGURACIÓN DE PÁGINA FÍSICA */
+    /* 1. RESET Y CONFIGURACIÃ“N DE PÃGINA FÃSICA */
     @page {
         size: letter;
         margin: 1.2cm;
@@ -879,7 +879,7 @@ img {
         font-size: 10pt;
     }
     
-    /* 2. OCULTAR ELEMENTOS DIGITALES Y EFECTOS DE SUPERPOSICIÓN */
+    /* 2. OCULTAR ELEMENTOS DIGITALES Y EFECTOS DE SUPERPOSICIÃ“N */
     .main-header,
     .print-fab,
     .stamp-container,
@@ -889,7 +889,7 @@ img {
         display: none !important;
     }
     
-    /* Quitar líneas oblicuas de hover en impresión */
+    /* Quitar lÃ­neas oblicuas de hover en impresiÃ³n */
     .product-card::before {
         display: none !important;
     }
@@ -901,7 +901,7 @@ img {
         gap: 1.5cm !important;
     }
     
-    /* 3. REESTRUCTURACIÓN DE CATEGORÍAS */
+    /* 3. REESTRUCTURACIÃ“N DE CATEGORÃAS */
     .menu-section {
         page-break-inside: auto;
         break-inside: auto;
@@ -933,14 +933,14 @@ img {
         display: none !important;
     }
     
-    /* 4. REESTRUCTURACIÓN A CUADRÍCULA */
+    /* 4. REESTRUCTURACIÃ“N A CUADRÃCULA */
     .product-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 0.6cm !important;
     }
     
-    /* 5. TARJETAS OPTIMIZADAS (SIN CLIP-PATHS EN IMPRESIÓN PARA COMPATIBILIDAD DE PDF) */
+    /* 5. TARJETAS OPTIMIZADAS (SIN CLIP-PATHS EN IMPRESIÃ“N PARA COMPATIBILIDAD DE PDF) */
     .product-card {
         background-color: #FFFFFF !important;
         color: #000000 !important;
@@ -948,7 +948,7 @@ img {
         box-shadow: none !important;
         transform: none !important;
         
-        /* PREVENCIÓN DE CORTES */
+        /* PREVENCIÃ“N DE CORTES */
         page-break-inside: avoid !important;
         break-inside: avoid !important;
     }
@@ -956,7 +956,7 @@ img {
     .product-image-container {
         height: 110px !important;
         border-bottom: 1px solid #000000 !important;
-        clip-path: none !important; /* Desactivar clip-path oblicuo para impresión limpia */
+        clip-path: none !important; /* Desactivar clip-path oblicuo para impresiÃ³n limpia */
     }
     
     .product-image {
@@ -1003,7 +1003,7 @@ img {
         box-shadow: none !important;
     }
 
-    /* OVERRIDES PARA BONELESS COMBO CARD EN IMPRESIÓN */
+    /* OVERRIDES PARA BONELESS COMBO CARD EN IMPRESIÃ“N */
     .product-card-full {
         max-width: 100% !important;
         margin: 0 !important;
@@ -1051,7 +1051,7 @@ img {
 }
 
 /* ==========================================================================
-   MODAL POPUP PROMOCIONAL (DISEÑO PREMIUM FLAT)
+   MODAL POPUP PROMOCIONAL (DISEÃ‘O PREMIUM FLAT)
    ========================================================================== */
 .promo-popup-overlay {
     position: fixed;
@@ -1078,7 +1078,7 @@ img {
 .promo-popup-content {
     position: relative;
     width: 90%;
-    max-width: 450px; /* Tamaño optimizado en desktop */
+    max-width: 450px; /* TamaÃ±o optimizado en desktop */
     background-color: #111111;
     border: var(--border-width) solid #000000;
     box-shadow: 6px 6px 0px var(--accent-color);
@@ -1133,7 +1133,7 @@ img {
     box-shadow: 1px 1px 0px #000000;
 }
 
-/* Ocultar en impresión */
+/* Ocultar en impresiÃ³n */
 @media print {
     .promo-popup-overlay,
     .qv-modal-overlay {
@@ -1142,7 +1142,7 @@ img {
 }
 
 /* ==========================================================================
-   QUICK VIEW PRODUCT DETAIL MODAL (DISEÑO PREMIUM DYNAMIC-FLAT)
+   QUICK VIEW PRODUCT DETAIL MODAL (DISEÃ‘O PREMIUM DYNAMIC-FLAT)
    ========================================================================== */
 body.modal-open {
     overflow: hidden !important;
@@ -1267,7 +1267,7 @@ body.modal-open {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 480px; /* Altura fija para alineación desktop */
+    height: 480px; /* Altura fija para alineaciÃ³n desktop */
     overflow: hidden;
 }
 
@@ -1285,7 +1285,7 @@ body.modal-open {
 .qv-large-image {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Conservar proporción sin distorsión */
+    object-fit: contain; /* Conservar proporciÃ³n sin distorsiÃ³n */
     transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
@@ -1355,7 +1355,7 @@ body.modal-open {
     transform: scale(0.97);
 }
 
-/* FLECHAS DE NAVEGACIÓN (DESKTOP) */
+/* FLECHAS DE NAVEGACIÃ“N (DESKTOP) */
 .qv-arrow {
     position: absolute;
     top: 50%;
@@ -1400,14 +1400,14 @@ body.modal-open {
     box-shadow: 2px 2px 0px #000000;
 }
 
-/* Evitar que las flechas se vean si el modal está oculto */
+/* Evitar que las flechas se vean si el modal estÃ¡ oculto */
 .qv-modal-overlay:not(.show) .qv-arrow {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-/* DISEÑO RESPONSIVO PARA MÓVIL Y TABLET */
+/* DISEÃ‘O RESPONSIVO PARA MÃ“VIL Y TABLET */
 @media (max-width: 990px) {
     .qv-arrow-left {
         left: 15px;
@@ -1425,7 +1425,7 @@ body.modal-open {
 }
 
 @media (max-width: 599px) {
-    /* DISEÑO BOTTOM SHEET COMPACTO EN MÓVIL (TIPO APP NATIVA) */
+    /* DISEÃ‘O BOTTOM SHEET COMPACTO EN MÃ“VIL (TIPO APP NATIVA) */
     .qv-modal-box {
         position: relative;
         bottom: auto;
@@ -1457,7 +1457,7 @@ body.modal-open {
     
     .qv-close-btn {
         position: absolute;
-        top: calc(35vh + 28px); /* Integrado naturalmente debajo de la imagen al lado del título (ajustado matemáticamente) */
+        top: calc(35vh + 28px); /* Integrado naturalmente debajo de la imagen al lado del tÃ­tulo (ajustado matemÃ¡ticamente) */
         right: 15px;
         width: 28px;
         height: 28px;
@@ -1483,7 +1483,7 @@ body.modal-open {
     .qv-image-section {
         width: 100%;
         height: 35vh; /* Ocupa el 35% del viewport de alto */
-        max-height: 200px; /* Reducción de altura para evitar dominar la pantalla */
+        max-height: 200px; /* ReducciÃ³n de altura para evitar dominar la pantalla */
         border-right: none;
         border-bottom: var(--border-width) solid var(--border-color);
         flex-shrink: 0;
@@ -1499,7 +1499,7 @@ body.modal-open {
     .qv-header-info {
         gap: 0.2rem;
         margin-bottom: 0.8rem;
-        padding-right: 35px; /* Margen derecho para no solapar con el botón X */
+        padding-right: 35px; /* Margen derecho para no solapar con el botÃ³n X */
     }
     
     .qv-product-name {
@@ -1518,10 +1518,10 @@ body.modal-open {
         margin-bottom: 0;
     }
     
-    /* FLECHAS DE NAVEGACIÓN INTEGRADAS Y CERCANAS AL CONTENIDO */
+    /* FLECHAS DE NAVEGACIÃ“N INTEGRADAS Y CERCANAS AL CONTENIDO */
     .qv-arrow {
         position: absolute;
-        top: calc(35vh / 2 + 13px); /* Centrado vertical sobre la sección de la imagen (ajustado por jalador) */
+        top: calc(35vh / 2 + 13px); /* Centrado vertical sobre la secciÃ³n de la imagen (ajustado por jalador) */
         transform: translateY(-50%);
         width: 38px;
         height: 38px;
@@ -1541,7 +1541,7 @@ body.modal-open {
     }
     
     .qv-arrow-left {
-        left: 12px; /* Posicionadas adentro para mejor integración visual */
+        left: 12px; /* Posicionadas adentro para mejor integraciÃ³n visual */
     }
     
     .qv-arrow-right {
@@ -1560,10 +1560,10 @@ body.modal-open {
 }
 
 /* ==========================================================================
-   DIFERENCIACIÓN DE DOBLE PRECIO (PAPAS / FRIES)
+   DIFERENCIACIÃ“N DE DOBLE PRECIO (PAPAS / FRIES)
    ========================================================================== */
 
-/* Doble precio en las tarjetas del menú */
+/* Doble precio en las tarjetas del menÃº */
 .pricing-double {
     display: flex;
     gap: 1.5rem;
@@ -1589,14 +1589,14 @@ body.modal-open {
 
 .price-val {
     font-family: var(--font-title);
-    font-size: 1.8rem; /* Tamaño reducido para encajar ambos precios */
+    font-size: 1.8rem; /* TamaÃ±o reducido para encajar ambos precios */
     color: var(--accent-color);
     line-height: 1;
     font-style: italic;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
-/* Adaptación responsiva de doble precio en tarjetas móviles */
+/* AdaptaciÃ³n responsiva de doble precio en tarjetas mÃ³viles */
 @media (max-width: 599px) {
     .pricing-double {
         gap: 0.5rem;
@@ -1672,7 +1672,7 @@ body.modal-open {
     }
     
     .qv-double-badge .qv-price-tag {
-        font-size: 1.5rem; /* Más compacto en pantallas chicas */
+        font-size: 1.5rem; /* MÃ¡s compacto en pantallas chicas */
     }
     
     .qv-double-label {

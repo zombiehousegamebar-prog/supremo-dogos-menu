@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    SUPREME MENU - ESTILOS PRINCIPALES (DISEÃ‘O PREMIUM DYNAMIC-FLAT)
    Optimizado para alto contraste y elementos tipo Photoshop (capas, sesgados, marcas de agua)
    ========================================================================== */
@@ -1204,7 +1204,7 @@ body.modal-open {
     max-width: 850px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: visible;
     transform: scale(0.9);
     opacity: 0;
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease;
@@ -1269,6 +1269,7 @@ body.modal-open {
     width: 100%;
     height: 480px; /* Altura fija para alineaciÃ³n desktop */
     overflow: hidden;
+    border-radius: 15px;
 }
 
 .qv-image-section {
@@ -1409,6 +1410,10 @@ body.modal-open {
 
 /* DISEÃ‘O RESPONSIVO PARA MÃ“VIL Y TABLET */
 @media (max-width: 990px) {
+    .qv-modal-box {
+        overflow: hidden;
+    }
+
     .qv-arrow-left {
         left: 15px;
     }

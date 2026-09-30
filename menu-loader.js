@@ -25,6 +25,7 @@
         root.normalizeMenuData = exportsObj.normalizeMenuData;
         root.loadMenuData = exportsObj.loadMenuData;
         root.formatMenuPrice = exportsObj.formatMenuPrice;
+        root.formatComboNumber = exportsObj.formatComboNumber;
     }
 })(typeof globalThis !== 'undefined' ? globalThis : (typeof window !== 'undefined' ? window : this), function () {
     'use strict';
@@ -58,6 +59,22 @@
         const num = parseFloat(cleaned);
         if (isNaN(num)) return String(val).trim();
         return num % 1 === 0 ? '$' + num.toFixed(0) : '$' + num.toFixed(2);
+    }
+
+    /**
+     * Formatea el identificador/número del sub-combo.
+     * Garantiza formato de dos dígitos para valores numéricos ("1" -> "01"),
+     * preservando intactos los valores especiales o simbólicos (ej: "★").
+     * @param {number|string} value
+     * @returns {string}
+     */
+    function formatComboNumber(value) {
+        if (value === null || value === undefined) return '';
+        const str = String(value).trim();
+        if (/^\d+$/.test(str)) {
+            return str.padStart(2, '0');
+        }
+        return str;
     }
 
     /**
@@ -144,7 +161,7 @@
                         });
 
                         return {
-                            comboNumber: c.combo_number !== null && c.combo_number !== undefined ? String(c.combo_number) : '',
+                            comboNumber: formatComboNumber(c.combo_number),
                             title: c.name || '',
                             price: formatPrice(c.price),
                             features: features
@@ -241,6 +258,7 @@
     return {
         normalizeMenuData: normalizeMenuData,
         loadMenuData: loadMenuData,
-        formatMenuPrice: formatPrice
+        formatMenuPrice: formatPrice,
+        formatComboNumber: formatComboNumber
     };
 });

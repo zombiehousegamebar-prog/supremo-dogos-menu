@@ -227,12 +227,30 @@
 
     <!--
         ORDEN DE CARGA DE SCRIPTS:
-        1. menu-data.js    → define la variable global menuData (única fuente de verdad)
-        2. menu-renderer.js → lee menuData e inyecta las tarjetas en los .product-grid
-        3. script.js       → encuentra las tarjetas ya en el DOM y aplica interacciones
+        1. menu-data.js        → define la constante local/global menuData (respaldo garantizado)
+        2. menu-loader.js      → define loadMenuData(fallbackData) con timeout y normalización
+        3. menu-renderer.js    → define renderMenu(data) y gestiona visibilidad de categorías
+        4. script.js           → registra listeners de interacción de página y tarjetas
+        5. Inicialización      → orquesta la carga asíncrona tras DOMContentLoaded con fallback
     -->
     <script src="menu-data.js"></script>
+    <script src="menu-loader.js"></script>
     <script src="menu-renderer.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                const data = await loadMenuData(menuData);
+                renderMenu(data);
+            } catch (err) {
+                console.error('[Menu Init] Error inesperado en loadMenuData, aplicando fallback:', err);
+                try {
+                    renderMenu(menuData);
+                } catch (fallbackErr) {
+                    console.error('[Menu Init] Error al renderizar fallback:', fallbackErr);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

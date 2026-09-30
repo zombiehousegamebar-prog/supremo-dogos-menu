@@ -234,48 +234,78 @@
     }
 
     /* ------------------------------------------------------------------
-       FUNCIÓN PRINCIPAL: renderMenu()
-       Itera sobre menuData.categories, localiza el .product-grid de cada
-       sección y le inyecta el HTML generado.
+       FUNCIÓN PRINCIPAL: renderMenu(data)
+       Inyecta las tarjetas HTML en los .product-grid, gestiona la visibilidad
+       de categorías activas/inactivas en secciones y navbar, y despacha
+       el evento 'supremo:dom-rendered'.
     ------------------------------------------------------------------ */
-    function renderMenu() {
-        if (typeof menuData === 'undefined') {
-            console.error('[menu-renderer] ERROR: menuData no está definido. Asegúrate de cargar menu-data.js antes que menu-renderer.js.');
+    function renderMenu(data) {
+        if (!data || !Array.isArray(data.categories)) {
+            console.error('[menu-renderer] ERROR: Datos inválidos pasados a renderMenu(data). Se esperaba { categories: [...] }');
             return;
         }
 
-        menuData.categories.forEach(function (category) {
-            // Busca la sección por su id (coincide con category.id)
+        // 1. Obtener los IDs de categorías activas presentes en data.categories
+        const activeCatIds = new Set(data.categories.map(function (c) {
+            return c.id;
+        }));
+
+        // 2. Gestionar visibilidad de las secciones .menu-section en el DOM
+        const allSections = document.querySelectorAll('.menu-section');
+        allSections.forEach(function (sec) {
+            if (activeCatIds.has(sec.id)) {
+                sec.style.display = '';
+            } else {
+                sec.style.display = 'none';
+                const grid = sec.querySelector('.product-grid');
+                if (grid) grid.innerHTML = ''; // Limpiar tarjetas si la categoría está inactiva
+            }
+        });
+
+        // 3. Gestionar visibilidad de los enlaces en el navbar (.nav-categories .nav-link)
+        const allNavLinks = document.querySelectorAll('.nav-categories .nav-link');
+        allNavLinks.forEach(function (link) {
+            const targetId = (link.getAttribute('href') || '').replace(/^#/, '');
+            if (activeCatIds.has(targetId)) {
+                link.style.display = '';
+            } else {
+                link.style.display = 'none';
+            }
+        });
+
+        // 4. Inyectar productos en cada sección activa (limpiando previamente el grid para evitar duplicados)
+        data.categories.forEach(function (category) {
             const section = document.getElementById(category.id);
             if (!section) {
                 console.warn(`[menu-renderer] No se encontró la sección #${category.id}`);
                 return;
             }
 
-            // Busca el .product-grid dentro de esa sección
             const grid = section.querySelector('.product-grid');
             if (!grid) {
                 console.warn(`[menu-renderer] No se encontró .product-grid en la sección #${category.id}`);
                 return;
             }
 
-            // Genera el HTML de todos los productos de la categoría
-            const html = category.products.map(renderProduct).join('\n\n');
+            const rawProducts = Array.isArray(category.products) ? category.products : [];
+            const html = rawProducts.map(renderProduct).join('\n\n');
 
-            // Inyecta las tarjetas en el grid
+            // Inyecta las tarjetas
             grid.innerHTML = html;
         });
 
-        console.info('[menu-renderer] Menú renderizado correctamente desde menu-data.js.');
+        console.info('[menu-renderer] Menú renderizado correctamente.');
+
+        // 5. Notificar que el DOM está listo con las tarjetas inyectadas
+        document.dispatchEvent(new CustomEvent('supremo:dom-rendered'));
     }
 
-    /* ------------------------------------------------------------------
-       EJECUTAR
-       Se llama directamente aquí (sin esperar DOMContentLoaded) porque
-       este script está ubicado al final del <body>, garantizando que el
-       DOM ya existe. script.js también está al final del <body> y sí usa
-       DOMContentLoaded, por lo que encontrará las tarjetas ya presentes.
-    ------------------------------------------------------------------ */
-    renderMenu();
+    // Exponer globalmente para navegador y módulos
+    if (typeof window !== 'undefined') {
+        window.renderMenu = renderMenu;
+    }
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = { renderMenu: renderMenu };
+    }
 
 })();
